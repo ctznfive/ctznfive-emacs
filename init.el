@@ -19,12 +19,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
     '(custom-safe-themes
-         (quote
-             ("e29a6c66d4c383dbda21f48effe83a1c2a1058a17ac506d60889aba36685ed94" default)))
- '(helm-minibuffer-history-key "M-p")
-    '(package-selected-packages
-         (quote
-             (org-download git-gutter org-bullets auto-complete flycheck projectile crux magit avy which-key smartparens diminish use-package))))
+         '("e29a6c66d4c383dbda21f48effe83a1c2a1058a17ac506d60889aba36685ed94" default))
+ '(helm-minibuffer-history-key "M-p"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -121,8 +117,7 @@
 (use-package git-gutter
     :ensure t
     :config
-    (git-gutter:linum-setup)
-    (global-git-gutter-mode +1))
+    (global-git-gutter-mode t))
 
 (use-package helm-projectile
     :ensure t
@@ -201,8 +196,9 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (global-hl-line-mode 1)
+(when (version<= "26.0.50" emacs-version)
+    (global-display-line-numbers-mode))
 (blink-cursor-mode -1)
-(line-number-mode t)
 (column-number-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -227,11 +223,9 @@
 (add-to-list 'initial-frame-alist '(foreground-color . "#eeeeee"))
 (add-to-list 'default-frame-alist '(background-color . "#1a1a1b"))
 (add-to-list 'default-frame-alist '(foreground-color . "#eeeeee"))
-(global-linum-mode t)
-(set-face-foreground 'linum "gray50")
 (set-face-foreground 'font-lock-comment-face "gray50")
 (set-face-background 'hl-line "gray20")
-(set-frame-font "Iosevka Semibold 14" nil t)
+(set-frame-font "Iosevka Semibold 16" nil t)
 
 (show-paren-mode t)
 (setq show-paren-delay 0)
@@ -243,7 +237,7 @@
         (concat user-emacs-directory "auto-save")))))
 
 (setq org-startup-with-inline-images t)
-(setq org-image-actual-width (/ (display-pixel-width) 2))
+(setq org-image-actual-width (/ (display-pixel-width) 3))
 (add-hook 'org-mode-hook #'visual-line-mode)
 
 

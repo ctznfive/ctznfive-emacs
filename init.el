@@ -122,7 +122,7 @@
     :ensure t
     :config
     (git-gutter:linum-setup)
-    (global-git-gutter-mode +1))
+    (global-git-gutter-mode t))
 
 (use-package helm-projectile
     :ensure t
@@ -201,8 +201,8 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (global-hl-line-mode 1)
+(global-linum-mode t)
 (blink-cursor-mode -1)
-(line-number-mode t)
 (column-number-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -227,7 +227,6 @@
 (add-to-list 'initial-frame-alist '(foreground-color . "#eeeeee"))
 (add-to-list 'default-frame-alist '(background-color . "#1a1a1b"))
 (add-to-list 'default-frame-alist '(foreground-color . "#eeeeee"))
-(global-linum-mode t)
 (set-face-foreground 'linum "gray50")
 (set-face-foreground 'font-lock-comment-face "gray50")
 (set-face-background 'hl-line "gray20")

@@ -224,9 +224,9 @@
 (display-time)
 
 (add-to-list 'initial-frame-alist '(background-color . "#1a1a1b"))
-(add-to-list 'initial-frame-alist '(foreground-color . "#eeeeee"))
+(add-to-list 'initial-frame-alist '(foreground-color . "#ffffff"))
 (add-to-list 'default-frame-alist '(background-color . "#1a1a1b"))
-(add-to-list 'default-frame-alist '(foreground-color . "#eeeeee"))
+(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
 (set-face-foreground 'font-lock-comment-face "gray50")
 (set-face-background 'hl-line "gray20")
 (set-frame-font "Iosevka Semibold 14" nil t)

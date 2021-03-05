@@ -2,7 +2,7 @@
 
 <p align="center"><img src="EmacsIcon.svg" width=150 height=150/></p>
 <p align="center"><a href="https://www.gnu.org/software/emacs/"><b>GNU Emacs</b></a></p>
-<p align="center">Nice and minimal GNU Emacs configuration</p>
+<p align="center"><b>Nice and minimal GNU Emacs configuration</b></p>
 
 ![screen](ctznfive-emacs.png)
 

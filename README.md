@@ -1,6 +1,6 @@
 # CTZNFIVE Emacs
 
-Nice and minimal emacs configuration, including plugins (evil, magit, helm, etc)
+Nice and minimal emacs configuration, including packages (evil, magit, helm, pass, etc)
 
 | System            | Repository Branch                                                      |
 |-------------------|------------------------------------------------------------------------|

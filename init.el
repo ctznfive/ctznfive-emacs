@@ -20,7 +20,9 @@
  ;; If there is more than one, they won't work right.
     '(custom-safe-themes
          '("e29a6c66d4c383dbda21f48effe83a1c2a1058a17ac506d60889aba36685ed94" default))
- '(helm-minibuffer-history-key "M-p"))
+ '(helm-minibuffer-history-key "M-p")
+    '(package-selected-packages
+         '(pass which-key use-package undo-fu smartparens smart-mode-line-atom-one-dark-theme org-download org-bullets magit helm-projectile git-gutter flycheck evil-collection doom-themes diminish crux avy auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -174,6 +176,9 @@
     :ensure t
     :config
     (add-hook 'dired-mode-hook 'org-download-enable))
+
+(use-package pass
+    :ensure t)
 
 
 

@@ -24,7 +24,7 @@
  '(helm-minibuffer-history-key "M-p")
     '(package-selected-packages
          (quote
-             (org-download git-gutter org-bullets auto-complete flycheck projectile crux magit avy which-key smartparens diminish use-package))))
+             (helm-projectile org-download git-gutter org-bullets auto-complete flycheck projectile crux magit avy which-key smartparens diminish use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -250,6 +250,8 @@
 (setq org-image-actual-width (/ (display-pixel-width) 2))
 (add-hook 'org-mode-hook #'visual-line-mode)
 
+;;; COMMON LISP
+(setq inferior-lisp-program "sbcl")
 
 
 ;;; init.el ends here

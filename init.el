@@ -245,6 +245,10 @@
 (setq org-image-actual-width (/ (display-pixel-width) 3))
 (add-hook 'org-mode-hook #'visual-line-mode)
 
+;;; COMMON LISP
+(load (expand-file-name "~/.quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "sbcl")
+
 
 
 ;;; init.el ends here

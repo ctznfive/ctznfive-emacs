@@ -247,7 +247,7 @@
         (concat user-emacs-directory "auto-save")))))
 
 (setq org-startup-with-inline-images t)
-(setq org-image-actual-width (/ (display-pixel-width) 2))
+(setq org-image-actual-width (/ (display-pixel-width) 3))
 (add-hook 'org-mode-hook #'visual-line-mode)
 
 ;;; COMMON LISP

@@ -249,10 +249,9 @@
 (setq org-startup-with-inline-images t)
 (setq org-image-actual-width (/ (display-pixel-width) 3))
 (add-hook 'org-mode-hook #'visual-line-mode)
-(setq org-priority-faces '((?A . (:foreground "red"))
-                           (?B . (:foreground "yellow"))
-                           (?C . (:foreground "green"))))
-
+(setq org-priority-faces '((?A . (:foreground  "#ef6666"))
+                           (?B . (:foreground "#e4e49c"))
+                           (?C . (:foreground "#66b266"))))
 
 ;;; COMMON LISP
 (setq inferior-lisp-program "sbcl")

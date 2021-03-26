@@ -252,6 +252,10 @@
 (setq org-priority-faces '((?A . (:foreground "#f65b5b"))
                            (?B . (:foreground "#e7e78a"))
                            (?C . (:foreground "#84f684"))))
+(setq org-todo-keywords
+    '((sequence "TODO" "NEXT" "WAITING" "|" "DONE")))
+(setq org-todo-keyword-faces
+    '(("NEXT" . "#f65b5b")))
 
 ;;; COMMON LISP
 (setq inferior-lisp-program "sbcl")

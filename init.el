@@ -248,9 +248,10 @@
                            (?B . (:foreground "#e7e78a"))
                            (?C . (:foreground "#84f684"))))
 (setq org-todo-keywords
-    '((sequence "TODO" "NEXT" "WAITING" "|" "DONE")))
+    '((sequence "NEXT" "BACKLOG" "TODO" "DOING" "|" "WAITING" "DONE")))
 (setq org-todo-keyword-faces
-    '(("NEXT" . "#f65b5b")))
+    '(("NEXT" . "#f65b5b")
+      ("DOING" . "#f65b5b")))
 
 ;;; COMMON LISP
 (load (expand-file-name "~/.quicklisp/slime-helper.el"))

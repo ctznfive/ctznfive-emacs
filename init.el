@@ -224,6 +224,7 @@
 (setq-default sgml-basic-offset 4)
 (setq-default nxml-child-indent 4)
 (setq tab-stop-list (number-sequence 4 200 4))
+(setq while-no-input-ignore-events '())
 
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date t)

@@ -24,7 +24,7 @@
  '(helm-minibuffer-history-key "M-p")
     '(package-selected-packages
          (quote
-             (helm-projectile org-download git-gutter org-bullets auto-complete flycheck projectile crux magit avy which-key smartparens diminish use-package))))
+             (haskell-mode helm-projectile org-download git-gutter org-bullets auto-complete flycheck projectile crux magit avy which-key smartparens diminish use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -185,6 +185,11 @@
     :ensure t
     :config
     (add-hook 'dired-mode-hook 'org-download-enable))
+
+(use-package haskell-mode
+    :ensure t
+    :config
+    (add-hook 'haskell-mode-hook 'interactive-haskell-mode))
 
 
 

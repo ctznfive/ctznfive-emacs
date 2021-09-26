@@ -253,6 +253,8 @@
     `((".*" ,(expand-file-name
         (concat user-emacs-directory "auto-save")))))
 
+;(add-hook 'auto-save-hook 'org-save-all-org-buffers)
+
 (setq org-startup-with-inline-images t)
 (setq org-image-actual-width (/ (display-pixel-width) 3))
 (add-hook 'org-mode-hook #'visual-line-mode)
@@ -260,10 +262,14 @@
                            (?B . (:foreground "#e7e78a"))
                            (?C . (:foreground "#84f684"))))
 (setq org-todo-keywords
-    '((sequence "NEXT" "BACKLOG" "TODO" "DOING" "|" "WAITING" "DONE")))
+    '((sequence "NEXT" "BACKLOG" "TODO" "DOING" "|" "@" "WAITING" "DONE")))
 (setq org-todo-keyword-faces
     '(("NEXT" . "#f65b5b")
       ("DOING" . "#f65b5b")))
+
+(setq 
+  org-default-notes-file "/home/ctznfive/Dropbox/Orgzly/gtd.org"
+  initial-buffer-choice  org-default-notes-file)
 
 ;;; COMMON LISP
 (setq inferior-lisp-program "sbcl")

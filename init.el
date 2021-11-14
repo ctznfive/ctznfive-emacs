@@ -212,7 +212,18 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (global-hl-line-mode 1)
-(global-linum-mode t)
+;(global-linum-mode t)
+(add-hook 'after-change-major-mode-hook
+    '(lambda ()
+       (linum-mode (if (or (equal major-mode 'org-mode) 
+                           (equal major-mode 'term-mode) 
+                           (equal major-mode 'help-mode)) 0 1))))
+(defun my/disable-scroll-bars (frame)
+  (modify-frame-parameters frame
+                           '((vertical-scroll-bars . nil)
+                             (horizontal-scroll-bars . nil))))
+(add-hook 'after-make-frame-functions 'my/disable-scroll-bars)
+
 (blink-cursor-mode -1)
 (column-number-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -267,7 +278,7 @@
     '(("NEXT" . "#f65b5b")
       ("DOING" . "#f65b5b")))
 
-(setq 
+(setq
   org-default-notes-file "/home/ctznfive/Dropbox/Orgzly/gtd.org"
   initial-buffer-choice  org-default-notes-file)
 

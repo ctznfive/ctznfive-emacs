@@ -265,6 +265,7 @@
         (concat user-emacs-directory "auto-save")))))
 
 ;(add-hook 'auto-save-hook 'org-save-all-org-buffers)
+(global-set-key (kbd "C-x w") 'org-save-all-org-buffers)
 
 (setq org-startup-with-inline-images t)
 (setq org-image-actual-width (/ (display-pixel-width) 3))

@@ -270,13 +270,8 @@
 (setq org-startup-with-inline-images t)
 (setq org-image-actual-width (/ (display-pixel-width) 3))
 (add-hook 'org-mode-hook #'visual-line-mode)
-<<<<<<< HEAD
 (set-face-attribute 'org-level-1 nil :foreground "#a4cffe")
 (set-face-attribute 'org-level-2 nil :foreground "#f0b9f0")
-=======
-(set-face-attribute 'org-level-1 nil :foreground "#89c9fa")
-(set-face-attribute 'org-level-2 nil :foreground "#F0B9F0")
->>>>>>> ef66a615f2764fd742e24ba5a12054065e4ab848
 (setq org-priority-faces '((?A . (:foreground "#f65b5b"))
                            (?B . (:foreground "#e7e78a"))
                            (?C . (:foreground "#84f684"))))

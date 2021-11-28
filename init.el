@@ -198,8 +198,11 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (global-hl-line-mode 1)
-(when (version<= "26.0.50" emacs-version)
-    (global-display-line-numbers-mode))
+;(when (version<= "26.0.50" emacs-version)
+;    (global-display-line-numbers-mode))
+(defun my-display-numbers-hook ()
+  (display-line-numbers-mode t))
+(add-hook 'prog-mode-hook 'my-display-numbers-hook)
 (blink-cursor-mode -1)
 (column-number-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -229,6 +232,12 @@
 (set-face-background 'hl-line "gray20")
 (set-frame-font "Iosevka Semibold 16" nil t)
 
+(defun my/disable-scroll-bars (frame)
+  (modify-frame-parameters frame
+                           '((vertical-scroll-bars . nil)
+                             (horizontal-scroll-bars . nil))))
+(add-hook 'after-make-frame-functions 'my/disable-scroll-bars)
+
 (show-paren-mode t)
 (setq show-paren-delay 0)
 (setq backup-directory-alist
@@ -238,10 +247,13 @@
     `((".*" ,(expand-file-name
         (concat user-emacs-directory "auto-save")))))
 
+(global-set-key (kbd "C-x w") 'org-save-all-org-buffers)
 (setq org-startup-folded t)
 (setq org-startup-with-inline-images t)
 (setq org-image-actual-width (/ (display-pixel-width) 3))
 (add-hook 'org-mode-hook #'visual-line-mode)
+(set-face-attribute 'org-level-1 nil :foreground "#7ab6ff")
+(set-face-attribute 'org-level-2 nil :foreground "#f2b1f2")
 (setq org-priority-faces '((?A . (:foreground "#f65b5b"))
                            (?B . (:foreground "#e7e78a"))
                            (?C . (:foreground "#84f684"))))

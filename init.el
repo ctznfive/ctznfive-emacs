@@ -22,7 +22,7 @@
          '("ed68393e901a88b9feefea1abfa9a9c5983e166e4378c71bb92e636423bd94fd" default))
  '(helm-minibuffer-history-key "M-p")
     '(package-selected-packages
-         '(haskell-mode which-key use-package undo-fu smartparens smart-mode-line-atom-one-dark-theme org-download org-bullets magit helm-projectile git-gutter flycheck evil-collection doom-themes diminish crux avy auto-complete)))
+         '(cider haskell-mode which-key use-package undo-fu smartparens smart-mode-line-atom-one-dark-theme org-download org-bullets magit helm-projectile git-gutter flycheck evil-collection doom-themes diminish crux avy auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -176,6 +176,9 @@
     :config
     (add-hook 'dired-mode-hook 'org-download-enable))
 
+(use-package cider
+    :ensure t)
+
 (use-package haskell-mode
     :ensure t
     :config
@@ -300,5 +303,8 @@
 (setq org-agenda-entry-text-maxlines 10)
 (add-hook 'org-agenda-finalize-hook
     (lambda () (org-agenda-entry-text-mode)))
+
+;; Clojure
+(setq cider-lein-command "~/bin/lein")
 
 ;;; init.el ends here
